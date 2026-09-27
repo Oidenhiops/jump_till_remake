@@ -1,0 +1,1652 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08ce56d5408b264da14ec982ff01edb, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: Assembly-CSharp::InitialDataSO
+  isHumanoid: 1
+  atlas: {fileID: 2800000, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+  atlasHands: {fileID: 2800000, guid: d5d0c0582d7ab434caa43b425a355409, type: 3}
+  icon: {fileID: 1760192908, guid: 5ad2e935482f278468588df16e4f60b8, type: 3}
+  characterData:
+    level: 0
+    name: 
+    initialDataInfo:
+      id: 0
+      initialDataSO: {fileID: 0}
+    statistics:
+      values:
+      - key: 1
+        value:
+          typeStatistic: 1
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 2
+        value:
+          typeStatistic: 2
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 3
+        value:
+          typeStatistic: 3
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 4
+        value:
+          typeStatistic: 4
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 5
+        value:
+          typeStatistic: 5
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 6
+        value:
+          typeStatistic: 6
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 7
+        value:
+          typeStatistic: 7
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 8
+        value:
+          typeStatistic: 8
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 9
+        value:
+          typeStatistic: 9
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 10
+        value:
+          typeStatistic: 10
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 11
+        value:
+          typeStatistic: 11
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 12
+        value:
+          typeStatistic: 12
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 13
+        value:
+          typeStatistic: 13
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 14
+        value:
+          typeStatistic: 14
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 15
+        value:
+          typeStatistic: 15
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 16
+        value:
+          typeStatistic: 16
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 17
+        value:
+          typeStatistic: 17
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 18
+        value:
+          typeStatistic: 18
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 19
+        value:
+          typeStatistic: 19
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 20
+        value:
+          typeStatistic: 20
+          isPercentage: 0
+          baseValue: 5
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 21
+        value:
+          typeStatistic: 21
+          isPercentage: 0
+          baseValue: 5
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 22
+        value:
+          typeStatistic: 22
+          isPercentage: 0
+          baseValue: 50
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 26
+        value:
+          typeStatistic: 26
+          isPercentage: 0
+          baseValue: 0
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 27
+        value:
+          typeStatistic: 27
+          isPercentage: 0
+          baseValue: 0
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 28
+        value:
+          typeStatistic: 28
+          isPercentage: 0
+          baseValue: 0
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 23
+        value:
+          typeStatistic: 23
+          isPercentage: 0
+          baseValue: 5
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 24
+        value:
+          typeStatistic: 24
+          isPercentage: 0
+          baseValue: 10
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 0
+      - key: 25
+        value:
+          typeStatistic: 25
+          isPercentage: 0
+          baseValue: 0
+          aptitudeValue: 100
+          itemValue: 0
+          buffValue: 0
+          _currentValue: 0
+          maxValue: 100
+    bag: []
+    equipments:
+    - key: 1
+      value:
+        itemId: 0
+        typeItem: 1
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 2
+      value:
+        itemId: 0
+        typeItem: 2
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 3
+      value:
+        itemId: 0
+        typeItem: 3
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 4
+      value:
+        itemId: 0
+        typeItem: 4
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 5
+      value:
+        itemId: 0
+        typeItem: 5
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 7
+      value:
+        itemId: 0
+        typeItem: 7
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 6
+      value:
+        itemId: 0
+        typeItem: 6
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 8
+      value:
+        itemId: 0
+        typeItem: 8
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    ammo:
+    - key: 0
+      value:
+        itemId: 0
+        typeItem: 0
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 1
+      value:
+        itemId: 0
+        typeItem: 0
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 2
+      value:
+        itemId: 0
+        typeItem: 0
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    - key: 3
+      value:
+        itemId: 0
+        typeItem: 0
+        itemBaseSO: {fileID: 0}
+        statistics:
+          values: []
+        activableItemIsActive: 0
+    skills: []
+    pasives:
+    - key: 1
+      value: []
+    - key: 2
+      value: []
+    - key: 3
+      value: []
+    statusEffects: []
+  animations:
+  - key: 1
+    value:
+      name: 1
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: 1519372639, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.4296875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: -1947557703, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: -1791399003, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3984375, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: 1496969064, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.4296875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      spritesInfoDown:
+      - characterSprite: {fileID: -1467387332, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1796875, y: 0.4453125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: 11316871, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1796875, y: 0.4296875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: -385224039, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1640625, y: 0.4296875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: -1040879595, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1640625, y: 0.4453125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      loop: 1
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 2
+    value:
+      name: 2
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: -1372222318, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1015625, y: 0.3515625, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.5257312, w: 0.8506508}
+      - characterSprite: {fileID: 1782875509, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1328125, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1292517037, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1484375, y: 0.3984375, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.22975288, w: 0.973249}
+      - characterSprite: {fileID: -164299742, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1328125, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.5257312, w: 0.8506508}
+      - characterSprite: {fileID: 953576252, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0859375, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+      - characterSprite: {fileID: -1554421151, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0703125, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      spritesInfoDown:
+      - characterSprite: {fileID: -870125675, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.3515625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      - characterSprite: {fileID: 1989535601, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0703125, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      - characterSprite: {fileID: -331805783, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0390625, y: 0.3203125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+      - characterSprite: {fileID: -1920119866, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0859375, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      - characterSprite: {fileID: 1240309274, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      - characterSprite: {fileID: -999125655, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      loop: 1
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 3
+    value:
+      name: 3
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: -1434054599, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      spritesInfoDown:
+      - characterSprite: {fileID: 664399120, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      loop: 1
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 4
+    value:
+      name: 4
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: 49213794, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      spritesInfoDown:
+      - characterSprite: {fileID: -1249442345, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      loop: 1
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 5
+    value:
+      name: 5
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: -446785445, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      spritesInfoDown:
+      - characterSprite: {fileID: -1720837338, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      loop: 1
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 6
+    value:
+      name: 6
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: 1959662841, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0390625, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1959662841, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0390625, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1959662841, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0390625, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1959662841, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0390625, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1959662841, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0390625, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1959662841, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0390625, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      spritesInfoDown:
+      - characterSprite: {fileID: -204391584, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0078125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: -204391584, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0078125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: -204391584, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0078125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: -204391584, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0078125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: -204391584, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0078125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: -204391584, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0078125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      loop: 1
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 7
+    value:
+      name: 7
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: -836532853, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0390625, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      spritesInfoDown:
+      - characterSprite: {fileID: 1956874829, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0078125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      loop: 1
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 8
+    value:
+      name: 8
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: -1565977246, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: -948932419, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 2053330215, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: -71164129, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: -900213080, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      spritesInfoDown:
+      - characterSprite: {fileID: 335458717, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 1901494714, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 407179016, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 1646466879, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: -912521097, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      loop: 0
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 9
+    value:
+      name: 9
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: 1698193689, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: 1698193689, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: 1698193689, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: 1698193689, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: 1698193689, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: 1698193689, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      spritesInfoDown:
+      - characterSprite: {fileID: -108719952, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: -108719952, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: -108719952, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: -108719952, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: -108719952, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      - characterSprite: {fileID: -108719952, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      loop: 1
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 10
+    value:
+      name: 10
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: 556760418, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      spritesInfoDown:
+      - characterSprite: {fileID: 1970973639, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      loop: 1
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 11
+    value:
+      name: 11
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: 418150573, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 1009727532, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      spritesInfoDown:
+      - characterSprite: {fileID: -1737743772, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 1596588172, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      loop: 0
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  - key: 12
+    value:
+      name: 12
+      linkAnimation: 0
+      spritesInfoUp:
+      - characterSprite: {fileID: -1295352508, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0703125, y: 0.4453125, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: -1448136630, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0078125, y: 0.5859375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: -972530177, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0234375, y: 0.6171875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1968952702, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0859375, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      - characterSprite: {fileID: 415989726, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0859375, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      - characterSprite: {fileID: -740196204, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0859375, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      spritesInfoDown:
+      - characterSprite: {fileID: -772396418, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.4921875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 2129859878, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0546875, y: 0.6171875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1152327361, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0234375, y: 0.6484375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 2052254285, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      - characterSprite: {fileID: -499245897, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      - characterSprite: {fileID: 685157108, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      loop: 0
+      frameAction: 0
+      needFinishAnimation: 0
+      instanceObj: {fileID: 0}
+      instance: {fileID: 0}
+  generateAllAnimations:
+    baseSprite: {fileID: -1467387332, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+    atlas: {fileID: 2800000, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+    atlasHands: {fileID: 2800000, guid: d5d0c0582d7ab434caa43b425a355409, type: 3}
+    atlasHandTracker: {fileID: 2800000, guid: 87e059ccd356e0242b02bf951f69a43c, type: 3}
+    handRightColor: {r: 1, g: 0, b: 0, a: 1}
+    handRightDirectionColor: {r: 0.5, g: 0, b: 0, a: 1}
+    handLeftColor: {r: 0, g: 0, b: 1, a: 1}
+    handLeftDirectionColor: {r: 0, g: 0, b: 0.5, a: 1}
+    handRotationOffset: 0
+    handColorTolerance: 0.1
+    logTrackerDetails: 0
+    icon: {fileID: 1760192908, guid: 5ad2e935482f278468588df16e4f60b8, type: 3}
+    isHumanoid: 0
+    pixelSize: 0.015625
+    rowNames: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000i
+    rows:
+    - name: 1
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: -1467387332, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1796875, y: 0.4453125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: 11316871, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1796875, y: 0.4296875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: -385224039, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1640625, y: 0.4296875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: -1040879595, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1640625, y: 0.4453125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      spritesInfoUp:
+      - characterSprite: {fileID: 1519372639, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.4296875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: -1947557703, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: -1791399003, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3984375, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+      - characterSprite: {fileID: 1496969064, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.4296875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.000000031023493, w: 1}
+    - name: 2
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: -870125675, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.3515625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      - characterSprite: {fileID: 1989535601, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0703125, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      - characterSprite: {fileID: -331805783, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0390625, y: 0.3203125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+      - characterSprite: {fileID: -1920119866, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0859375, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      - characterSprite: {fileID: 1240309274, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      - characterSprite: {fileID: -999125655, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1171875, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      spritesInfoUp:
+      - characterSprite: {fileID: -1372222318, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1015625, y: 0.3515625, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.5257312, w: 0.8506508}
+      - characterSprite: {fileID: 1782875509, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1328125, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1292517037, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1484375, y: 0.3984375, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.22975288, w: 0.973249}
+      - characterSprite: {fileID: -164299742, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1328125, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.5257312, w: 0.8506508}
+      - characterSprite: {fileID: 953576252, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0859375, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+      - characterSprite: {fileID: -1554421151, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0703125, y: 0.3828125, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+    - name: 3
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: 664399120, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      spritesInfoUp:
+      - characterSprite: {fileID: -1434054599, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+    - name: 4
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: -1249442345, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      spritesInfoUp:
+      - characterSprite: {fileID: 49213794, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+    - name: 5
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: -1720837338, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      spritesInfoUp:
+      - characterSprite: {fileID: -446785445, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+    - name: 6
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: -204391584, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0078125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      spritesInfoUp:
+      - characterSprite: {fileID: 1959662841, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0390625, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+    - name: 7
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: 1956874829, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0078125, y: 0.3671875, z: 0}
+          handRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+      spritesInfoUp:
+      - characterSprite: {fileID: -836532853, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0390625, y: 0.4140625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+    - name: 8
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: 335458717, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 1901494714, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 407179016, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 1646466879, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: -912521097, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      spritesInfoUp:
+      - characterSprite: {fileID: -1565977246, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: -948932419, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 2053330215, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: -71164129, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: -900213080, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+    - name: 9
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: -108719952, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.8046875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+      spritesInfoUp:
+      - characterSprite: {fileID: 1698193689, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.7890625, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+    - name: 10
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: 1970973639, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      spritesInfoUp:
+      - characterSprite: {fileID: 556760418, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+    - name: 11
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: -1737743772, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 1596588172, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      spritesInfoUp:
+      - characterSprite: {fileID: 418150573, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+      - characterSprite: {fileID: 1009727532, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+    - name: 12
+      repeat: 1
+      loop: 0
+      frameAction: 0
+      typeAnimation: 0
+      linkAnimation: 0
+      needFinishAnimation: 0
+      spritesInfoDown:
+      - characterSprite: {fileID: -772396418, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.1796875, y: 0.4921875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 2129859878, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0546875, y: 0.6171875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1152327361, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0234375, y: 0.6484375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 2052254285, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      - characterSprite: {fileID: -499245897, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      - characterSprite: {fileID: 685157108, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.1328125, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.8506507, w: -0.5257312}
+      spritesInfoUp:
+      - characterSprite: {fileID: -1295352508, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0703125, y: 0.4453125, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: -1448136630, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0078125, y: 0.5859375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: -972530177, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: 0.0234375, y: 0.6171875, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.38268346, w: 0.9238795}
+      - characterSprite: {fileID: 1968952702, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0859375, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      - characterSprite: {fileID: 415989726, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0859375, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
+      - characterSprite: {fileID: -740196204, guid: 28ba607fe7aaf0248a6d0c1da3c60b3d, type: 3}
+        handL:
+          handPos: {x: 0, y: 0, z: 0}
+          handRotation: {x: 0, y: 0, z: 0, w: 1}
+        handR:
+          handPos: {x: -0.0859375, y: 0.3359375, z: 0}
+          handRotation: {x: 0, y: 0, z: -0.92387956, w: -0.3826834}
