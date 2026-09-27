@@ -93,6 +93,9 @@ public class GameManager : MonoBehaviour
                     case TypeScene.DialogScene:
                         if (!SceneManager.GetSceneByName("DialogScene").isLoaded) await SceneManager.LoadSceneAsync("DialogScene", LoadSceneMode.Additive);
                         break;
+                    case TypeScene.LevelSelectorScene:
+                        if (!SceneManager.GetSceneByName("LevelSelectorScene").isLoaded) await SceneManager.LoadSceneAsync("LevelSelectorScene", LoadSceneMode.Additive);
+                        break;
                     case TypeScene.Exit:
                         Application.Quit();
                         break;
@@ -155,7 +158,7 @@ public class GameManager : MonoBehaviour
         GameScene = 6,
         WinScene = 7,
         GameOverScene = 8,
-        CityScene = 8,
+        LevelSelectorScene = 9,
     }
     public enum TypeLoader
     {

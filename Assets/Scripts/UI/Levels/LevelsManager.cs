@@ -1,13 +1,20 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class LevelsManager : MonoBehaviour
+public class LevelsManager : MonoBehaviour, GameManagerHelper.IMenuScene
 {
     public ScrollPage scrollPage;
     public Transform container;
     public ScrollPage.ScrollPageData scrollPageData;
+    public GameManagerHelper gameManagerHelper;
+    public InputAction unloadLevelSelectorButton;
+    public Animator animator;
+    public bool isMenuActive;
     void Awake()
     {
         InitLevelsData();
+        gameManagerHelper.sceneData = this;
+        unloadLevelSelectorButton.started += UnloadLevelSelectorMenu;
     }
     void InitLevelsData()
     {
@@ -29,5 +36,15 @@ public class LevelsManager : MonoBehaviour
                 levelBanner.InitializeBanner(GameData.Instance.levelsDBSO.data[levelIndex]);
             }
         }
+    }
+    public void UnloadLevelSelectorMenu(InputAction.CallbackContext context) { HandleUnloadLevelSelectorMenu(); }
+    public void HandleUnloadLevelSelectorMenu() { gameManagerHelper.UnloadMenuScene(9); }
+    public void PlayEndAnimation()
+    {
+        animator.SetTrigger("exit");
+    }
+    public bool AnimationEnded()
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).IsName("MenuExit") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1;
     }
 }
