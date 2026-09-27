@@ -96,6 +96,9 @@ public class GameManager : MonoBehaviour
                     case TypeScene.LevelSelectorScene:
                         if (!SceneManager.GetSceneByName("LevelSelectorScene").isLoaded) await SceneManager.LoadSceneAsync("LevelSelectorScene", LoadSceneMode.Additive);
                         break;
+                    case TypeScene.LanguageSelectorScene:
+                        if (!SceneManager.GetSceneByName("LanguageSelectorScene").isLoaded) await SceneManager.LoadSceneAsync("LanguageSelectorScene", LoadSceneMode.Additive);
+                        break;
                     case TypeScene.Exit:
                         Application.Quit();
                         break;
@@ -159,6 +162,7 @@ public class GameManager : MonoBehaviour
         WinScene = 7,
         GameOverScene = 8,
         LevelSelectorScene = 9,
+        LanguageSelectorScene = 10,
     }
     public enum TypeLoader
     {
