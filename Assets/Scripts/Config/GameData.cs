@@ -36,7 +36,6 @@ public class GameData : MonoBehaviour
             LoadLOCS();
             AudioManager.Instance.SetAudioMixerData();
             GameManager.Instance.StartCoroutine(AudioManager.Instance.FadeIn());
-            _ = GameManager.Instance.LoadMenuScene(GameManager.TypeScene.LanguageSelectorScene);
         }
         catch (Exception e)
         {

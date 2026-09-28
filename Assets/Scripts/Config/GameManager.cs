@@ -110,6 +110,38 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public async Awaitable LoadGameScene(string sceneName)
+    {
+        try
+        {
+            _ = AudioManager.Instance.FadeOut();
+            await ManagementLoaderScene.Instance.CloseLoader();
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            _ = AudioManager.Instance.FadeIn();
+            await ManagementLoaderScene.Instance.OpenLoader();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
+    }
+
+    public async Awaitable ReloadGameScene()
+    {
+        try
+        {
+            _ = AudioManager.Instance.FadeOut();
+            await ManagementLoaderScene.Instance.CloseLoader();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+            _ = AudioManager.Instance.FadeIn();
+            await ManagementLoaderScene.Instance.OpenLoader();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
+    }
+
     public async Awaitable UnloadMenuScene(TypeScene typeScene, GameManagerHelper.IMenuScene sceneData)
     {
         try

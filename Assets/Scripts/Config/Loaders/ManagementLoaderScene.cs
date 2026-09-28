@@ -1,15 +1,15 @@
 using System;
-using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ManagementLoaderScene : MonoBehaviour
 {
     public static ManagementLoaderScene Instance { get; private set; }
-    public Animator loaderAnimator;
+    public Animator animator;
     public bool _finishLoad;
     public Action OnFinishOpenAnimation;
-    public float currentLoad;
+    public CanvasGroup canvasGroup;
+    public CircleWipe circleWipe;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -19,29 +19,47 @@ public class ManagementLoaderScene : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-    public async Awaitable AutoCharge()
-    {
-        _ = ValidateChargeIsComplete();
-        int i = 0;
-        while (true)
-        {
-            AdjustLoading(10 * i);
-            i++;
-            if (i > 10) break;
-            await Awaitable.NextFrameAsync();
-        }
-    }
-    public void AdjustLoading(float amount)
-    {
-        currentLoad = amount;
+        _ = OpenLoader();
     }
     public bool ValidateLoaderIsOnIdle()
     {
-        return loaderAnimator.GetCurrentAnimatorStateInfo(0).IsName("LoaderIdle");
+        return animator.GetCurrentAnimatorStateInfo(0).IsName("LoaderIdle");
     }
     public virtual async Awaitable ValidateChargeIsComplete()
     {
         await Awaitable.NextFrameAsync();
+    }
+    public async Awaitable CloseLoader()
+    {
+        SetBlockers(true);
+        await circleWipe.Play(0);
+        animator.Play("LoaderExit", 0, 0f);
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("LoaderExit"))
+        {
+            await Awaitable.NextFrameAsync();
+        }
+        while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        {
+            await Awaitable.NextFrameAsync();
+        }
+    }
+    public void SetBlockers(bool state)
+    {
+        canvasGroup.interactable = state;
+        canvasGroup.blocksRaycasts = state;
+    }
+    public async Awaitable OpenLoader()
+    {
+        animator.Play("LoaderEnter", 0, 0f);
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("LoaderEnter"))
+        {
+            await Awaitable.NextFrameAsync();
+        }
+        while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        {
+            await Awaitable.NextFrameAsync();
+        }
+        await circleWipe.Play(1);
+        SetBlockers(false);
     }
 }

@@ -1,11 +1,9 @@
-using System;
-using JetBrains.Annotations;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class LevelBanner : MonoBehaviour
+public class LevelBanner : MonoBehaviour, IPointerDownHandler
 {
     public GameObject levelData;
     public GameObject levelLock;
@@ -13,8 +11,10 @@ public class LevelBanner : MonoBehaviour
     public TMP_Text levelName;
     public TMP_Text bestTime;
     public Image[] stars;
+    LevelsDBSO.LevelData level;
     public void InitializeBanner(LevelsDBSO.LevelData levelInfo)
     {
+        level = levelInfo;
         if (levelInfo.isUnlock)
         {
             levelLock.SetActive(false);
@@ -36,4 +36,13 @@ public class LevelBanner : MonoBehaviour
             }
         }
     }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (level.isUnlock)
+        {
+            _ = GameManager.Instance.LoadGameScene(level.scene);
+        }
+    }
+
 }

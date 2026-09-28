@@ -14,11 +14,17 @@ public class OptionsMenu : MonoBehaviour, GameManagerHelper.IMenuScene
     public Toggle muteToggle;
     public ButtonSelector displayButton;
     public GameObject homeButton;
+    public GameObject resetButton;
     public InputAction unloadOptionsMenuButton;
     public bool isMenuActive;
     public GameManagerHelper gameManagerHelper;
     public Animator animator;
+    public CircleWipe circleWipe;
     void Awake()
+    {
+
+    }
+    public async Awaitable InitMenu()
     {
         Instance = this;
         InitializeVolumeMenu();
@@ -26,7 +32,12 @@ public class OptionsMenu : MonoBehaviour, GameManagerHelper.IMenuScene
         gameManagerHelper.sceneData = this;
         unloadOptionsMenuButton.started += UnloadOptionsMenu;
         displayButton.InitializeDefaultButton();
-        if (SceneManager.GetSceneByName("MainScene").isLoaded) homeButton.SetActive(false);
+        if (SceneManager.GetSceneByName("HomeScene").isLoaded)
+        {
+            homeButton.SetActive(false);
+            resetButton.SetActive(false);
+        }
+        await circleWipe.Play(1);
         isMenuActive = true;
     }
     public void InitializeDisplayMenu()
