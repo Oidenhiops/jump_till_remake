@@ -81,6 +81,15 @@ public class GameManager : MonoBehaviour
             {
                 switch (typeScene)
                 {
+                    case TypeScene.HomeScene:
+                        _ = AudioManager.Instance.FadeOut();
+                        await ManagementLoaderScene.Instance.CloseLoader();
+                        SceneManager.LoadScene("HomeScene", LoadSceneMode.Single);
+                        AudioManager.Instance.bgmSource.clip = AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.BGM, "HomeScene");
+                        AudioManager.Instance.bgmSource.Play();
+                        _ = AudioManager.Instance.FadeIn();
+                        await ManagementLoaderScene.Instance.OpenLoader();
+                        break;
                     case TypeScene.OptionsScene:
                         if (!SceneManager.GetSceneByName("OptionsScene").isLoaded) await SceneManager.LoadSceneAsync("OptionsScene", LoadSceneMode.Additive);
                         break;
@@ -110,13 +119,15 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public async Awaitable LoadGameScene(string sceneName)
+    public async Awaitable LoadGameScene(int id)
     {
         try
         {
             _ = AudioManager.Instance.FadeOut();
             await ManagementLoaderScene.Instance.CloseLoader();
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            SceneManager.LoadScene(GameData.Instance.levelsDBSO.data[id].scene, LoadSceneMode.Single);
+            AudioManager.Instance.bgmSource.clip = AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.BGM, GameData.Instance.levelsDBSO.data[id].scene);
+            AudioManager.Instance.bgmSource.Play();
             _ = AudioManager.Instance.FadeIn();
             await ManagementLoaderScene.Instance.OpenLoader();
         }
@@ -133,6 +144,7 @@ public class GameManager : MonoBehaviour
             _ = AudioManager.Instance.FadeOut();
             await ManagementLoaderScene.Instance.CloseLoader();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+            AudioManager.Instance.bgmSource.Play();
             _ = AudioManager.Instance.FadeIn();
             await ManagementLoaderScene.Instance.OpenLoader();
         }

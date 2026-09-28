@@ -41,7 +41,7 @@ public class LevelBanner : MonoBehaviour, IPointerDownHandler
     {
         if (level.isUnlock)
         {
-            _ = GameManager.Instance.LoadGameScene(level.scene);
+            _ = GameManager.Instance.LoadGameScene(level.id);
         }
     }
 

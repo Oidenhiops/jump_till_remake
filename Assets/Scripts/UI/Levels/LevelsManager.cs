@@ -9,12 +9,19 @@ public class LevelsManager : MonoBehaviour, GameManagerHelper.IMenuScene
     public GameManagerHelper gameManagerHelper;
     public InputAction unloadLevelSelectorButton;
     public Animator animator;
-    public bool isMenuActive;
+    public CircleWipe circleWipe;
+    bool finishEndAnimation;
     void Awake()
+    {
+        _ = InitMenu();
+    }
+    async Awaitable InitMenu()
     {
         InitLevelsData();
         gameManagerHelper.sceneData = this;
         unloadLevelSelectorButton.started += UnloadLevelSelectorMenu;
+        await Awaitable.NextFrameAsync();
+        await circleWipe.Play(1);
     }
     void InitLevelsData()
     {
@@ -41,10 +48,16 @@ public class LevelsManager : MonoBehaviour, GameManagerHelper.IMenuScene
     public void HandleUnloadLevelSelectorMenu() { gameManagerHelper.UnloadMenuScene(9); }
     public void PlayEndAnimation()
     {
+        _ = EndAnimationHandle();
+    }
+    async Awaitable EndAnimationHandle()
+    {
         animator.SetTrigger("exit");
+        await circleWipe.Play(0);
+        finishEndAnimation = true;
     }
     public bool AnimationEnded()
     {
-        return animator.GetCurrentAnimatorStateInfo(0).IsName("MenuExit") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1;
+        return finishEndAnimation;
     }
 }

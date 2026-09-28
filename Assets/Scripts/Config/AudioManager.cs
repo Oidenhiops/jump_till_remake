@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
         {
             if (!GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.isMute)
             {
-                float targetDecibels = 20 * Mathf.Log10(GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.volumes[TypeSound.BGM] / 100);
+                float targetDecibels = 20 * Mathf.Log10(GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.volumes[TypeSound.MASTER] / 100);
                 float currentVolume;
 
                 if (!audioMixer.GetFloat(TypeSound.MASTER.ToString(), out currentVolume))
@@ -73,7 +73,7 @@ public class AudioManager : MonoBehaviour
                 float currentVolume;
                 if (!audioMixer.GetFloat(TypeSound.MASTER.ToString(), out currentVolume))
                 {
-                    currentVolume = 20 * Mathf.Log10(GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.volumes[TypeSound.BGM] / 100);
+                    currentVolume = 20 * Mathf.Log10(GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.volumes[TypeSound.MASTER] / 100);
                 }
                 float targetVolume = -80f;
                 float duration = 1f;
@@ -108,13 +108,16 @@ public class AudioManager : MonoBehaviour
         }
         return null;
     }
-    public void SetAudioMixerData()
+    public void SetAudioMixerData(bool whitOutmMaster = false)
     {
         foreach(KeyValuePair<TypeSound, float> sounds in GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.volumes)
         {
-            float volume = GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.volumes[sounds.Key] != 0 ? 
-                20 * Mathf.Log10(GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.volumes[sounds.Key] / 100) : -80;
-            audioMixer.SetFloat(sounds.Key.ToString(), volume);
+            if (!whitOutmMaster || whitOutmMaster && sounds.Key != TypeSound.MASTER)
+            {
+                float volume = GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.volumes[sounds.Key] != 0 ?
+                    20 * Mathf.Log10(GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.volumes[sounds.Key] / 100) : -80;
+                audioMixer.SetFloat(sounds.Key.ToString(), volume);
+            }
         }
         if (GameData.Instance.systemDataInfo.configurationsInfo.soundConfiguration.isMute) audioMixer.SetFloat(TypeSound.MASTER.ToString(), -80);
         GameData.Instance.SaveSystemData();

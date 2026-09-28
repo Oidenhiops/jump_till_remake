@@ -32,7 +32,7 @@ Material:
     m_Floats:
     - _ColorMask: 15
     - _Invert: 0
-    - _Radius: 0
+    - _Radius: 1
     - _Softness: 0.02
     - _Stencil: 0
     - _StencilComp: 8
@@ -42,6 +42,6 @@ Material:
     - _UseUIAlphaClip: 1
     m_Colors:
     - _Center: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 0.7058824}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

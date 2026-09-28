@@ -14,14 +14,9 @@ public class GameManagerHelper : MonoBehaviour
         GameManager.TypeScene scene = (GameManager.TypeScene)typeScene;
         _ = GameManager.Instance.UnloadMenuScene(scene, sceneData);
     }
-    public void LoadScene(int typeScene)
+    public void LoadScene(int levelId)
     {
-        GameManager.TypeScene scene = (GameManager.TypeScene)typeScene;
-        _ = GameManager.Instance.LoadGameScene(scene.ToString());
-    }
-    public void LoadScene(string sceneName)
-    {
-        _ = GameManager.Instance.LoadGameScene(sceneName);
+        _ = GameManager.Instance.LoadGameScene(levelId);
     }
     public void ReloadScene()
     {

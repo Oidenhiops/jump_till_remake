@@ -13,6 +13,7 @@ public class GameData : MonoBehaviour
     [SerializeField]
     public Dictionary<TypeLOCS, Dictionary<TypeLanguage, Dictionary<string, DialogData>>> locs = new Dictionary<TypeLOCS, Dictionary<TypeLanguage, Dictionary<string, DialogData>>>();
     public LevelsDBSO levelsDBSO;
+    public SoundsDBSO soundsDBSO;
     void Awake()
     {
         if (Instance == null)
@@ -34,7 +35,8 @@ public class GameData : MonoBehaviour
             LoadGameDataInfo();
             LoadSystemDataInfo();
             LoadLOCS();
-            AudioManager.Instance.SetAudioMixerData();
+            await Awaitable.NextFrameAsync();
+            AudioManager.Instance.SetAudioMixerData(true);
             GameManager.Instance.StartCoroutine(AudioManager.Instance.FadeIn());
         }
         catch (Exception e)

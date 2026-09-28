@@ -12,7 +12,7 @@ public class OptionsMenu : MonoBehaviour, GameManagerHelper.IMenuScene
     public Dictionary<SliderManager, AudioManager.TypeSound> volumeSliders = new Dictionary<SliderManager, AudioManager.TypeSound>();
     public RowSelector languageRowSelector;
     public Toggle muteToggle;
-    public ButtonSelector displayButton;
+    public ButtonSelector defaultButton;
     public GameObject homeButton;
     public GameObject resetButton;
     public InputAction unloadOptionsMenuButton;
@@ -20,25 +20,34 @@ public class OptionsMenu : MonoBehaviour, GameManagerHelper.IMenuScene
     public GameManagerHelper gameManagerHelper;
     public Animator animator;
     public CircleWipe circleWipe;
+    bool finishEndAnimation;
     void Awake()
     {
-
+        _ = InitMenu();
     }
     public async Awaitable InitMenu()
     {
-        Instance = this;
-        InitializeVolumeMenu();
-        InitializeDisplayMenu();
-        gameManagerHelper.sceneData = this;
-        unloadOptionsMenuButton.started += UnloadOptionsMenu;
-        displayButton.InitializeDefaultButton();
-        if (SceneManager.GetSceneByName("HomeScene").isLoaded)
+        try
         {
-            homeButton.SetActive(false);
-            resetButton.SetActive(false);
+            Instance = this;
+            InitializeVolumeMenu();
+            InitializeDisplayMenu();
+            gameManagerHelper.sceneData = this;
+            unloadOptionsMenuButton.started += UnloadOptionsMenu;
+            defaultButton.InitializeDefaultButton();
+            if (SceneManager.GetSceneByName("HomeScene").isLoaded)
+            {
+                homeButton.SetActive(false);
+                resetButton.SetActive(false);
+            }
+            await Awaitable.NextFrameAsync();
+            await circleWipe.Play(1);
+            isMenuActive = true;
         }
-        await circleWipe.Play(1);
-        isMenuActive = true;
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
     public void InitializeDisplayMenu()
     {
@@ -83,11 +92,16 @@ public class OptionsMenu : MonoBehaviour, GameManagerHelper.IMenuScene
     public void HandleUnloadOptionsMenu() { gameManagerHelper.UnloadMenuScene(1); }
     public void PlayEndAnimation()
     {
-        animator.SetTrigger("exit");
+        _ = EndAnimationHandle();
     }
-
+    async Awaitable EndAnimationHandle()
+    {
+        animator.SetTrigger("exit");
+        await circleWipe.Play(0);
+        finishEndAnimation = true;
+    }
     public bool AnimationEnded()
     {
-        return animator.GetCurrentAnimatorStateInfo(0).IsName("MenuExit") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1;
+        return finishEndAnimation;
     }
 }

@@ -39,3 +39,11 @@ MonoBehaviour:
       - {fileID: 8300000, guid: 3c3ad5fea782d6745bb174be9e20ae50, type: 3}
       - {fileID: 8300000, guid: 82f4cba4b4c4cce4c9ab53e977e8303c, type: 3}
       - {fileID: 8300000, guid: cebcb279b62453d4e90973cfdc8982ce, type: 3}
+  - key: 1
+    value:
+    - key: HomeScene
+      value:
+      - {fileID: 8300000, guid: 8f1692266caf28343bbdb339e573ad72, type: 3}
+    - key: TutorialScene
+      value:
+      - {fileID: 8300000, guid: c9fb7fda1cd3b04498e7f5000484cdac, type: 3}
