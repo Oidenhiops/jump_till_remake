@@ -933,6 +933,7 @@ MonoBehaviour:
       value: {fileID: 2093614072223719965, guid: 07ccc9476e97fa54e97eea8f7fc57ae1, type: 3}
   locs: []
   levelsDBSO: {fileID: 11400000, guid: 42b9d3cb00a59ba43ad9145c97009d64, type: 2}
+  soundsDBSO: {fileID: 0}
 --- !u!4 &391458499
 Transform:
   m_ObjectHideFlags: 0
@@ -1002,7 +1003,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2403,7 +2404,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2928,10 +2929,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.08675214
     y: 0
-    width: 1
-    height: 1
+    width: 0.35783476
+    height: 0.4361111
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

@@ -61,5 +61,6 @@ public class ManagementLoaderScene : MonoBehaviour
         }
         await circleWipe.Play(1);
         SetBlockers(false);
+        GameManager.Instance.startGame = true;
     }
 }

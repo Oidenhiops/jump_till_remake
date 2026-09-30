@@ -69,8 +69,6 @@ public class GameManager : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
-        Physics2D.simulationMode = SimulationMode2D.Script;
-        Physics2D.autoSyncTransforms = false;
         currentDevice = principalDevice;
         if (ManagementLoaderScene.Instance) ManagementLoaderScene.Instance.OnFinishOpenAnimation += () => { startGame = true; };
     }
@@ -123,6 +121,7 @@ public class GameManager : MonoBehaviour
     {
         try
         {
+            startGame = false;
             _ = AudioManager.Instance.FadeOut();
             await ManagementLoaderScene.Instance.CloseLoader();
             SceneManager.LoadScene(GameData.Instance.levelsDBSO.data[id].scene, LoadSceneMode.Single);
