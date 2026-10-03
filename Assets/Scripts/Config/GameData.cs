@@ -116,7 +116,8 @@ public class GameData : MonoBehaviour
         systemDataInfo.configurationsInfo.currentLanguage = TypeLanguage.English;
         SetStartingDataSound();
         gameDataInfo = new GameDataInfo();
-        gameDataInfo.levels.Add(0, levelsDBSO.data[0]);
+        gameDataInfo.levels.Add(0, levelsDBSO.CloneLevelData(0));
+        gameDataInfo.levels[0].isUnlock = true;
         SaveGameData();
         _ = GameManager.Instance.LoadMenuScene(GameManager.TypeScene.LanguageSelectorScene);
     }

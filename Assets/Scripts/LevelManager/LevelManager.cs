@@ -65,11 +65,12 @@ public class LevelManager : MonoBehaviour
         if (GameData.Instance.gameDataInfo.levels[GameManager.Instance.currentLevelId].time > timer || GameData.Instance.gameDataInfo.levels[GameManager.Instance.currentLevelId].time == 0f)
         {
             GameData.Instance.gameDataInfo.levels[GameManager.Instance.currentLevelId].time = timer;
-            if (!GameData.Instance.levelsDBSO.data.ContainsKey(GameManager.Instance.currentLevelId + 1))
-            {
-                GameData.Instance.gameDataInfo.levels.Add(GameManager.Instance.currentLevelId + 1, GameData.Instance.levelsDBSO.data[GameManager.Instance.currentLevelId + 1]);
-                GameData.Instance.gameDataInfo.levels[GameManager.Instance.currentLevelId + 1].isUnlock = true;
-            }
+            GameData.Instance.SaveGameData();
+        }
+        if (!GameData.Instance.gameDataInfo.levels.ContainsKey(GameManager.Instance.currentLevelId + 1))
+        {
+            GameData.Instance.gameDataInfo.levels.Add(GameManager.Instance.currentLevelId + 1, GameData.Instance.levelsDBSO.CloneLevelData(GameManager.Instance.currentLevelId + 1));
+            GameData.Instance.gameDataInfo.levels[GameManager.Instance.currentLevelId + 1].isUnlock = true;
             GameData.Instance.SaveGameData();
         }
         CharacterPlayer.Instance.rb.linearVelocity = Vector2.zero;

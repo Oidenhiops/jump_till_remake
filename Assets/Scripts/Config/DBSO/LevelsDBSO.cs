@@ -7,7 +7,29 @@ public class LevelsDBSO : ScriptableObject
 {
     [SerializeField]
     public Dictionary<int, LevelData> data = new Dictionary<int, LevelData>();
-
+    public LevelData CloneLevelData(int id)
+    {
+        if (data.ContainsKey(id))
+        {
+            LevelData original = data[id];
+            LevelData clone = new LevelData
+            {
+                id = original.id,
+                scene = original.scene,
+                levelName = original.levelName,
+                isUnlock = original.isUnlock,
+                isPass = original.isPass,
+                time = original.time,
+                starsTime = (float[])original.starsTime.Clone()
+            };
+            return clone;
+        }
+        else
+        {
+            Debug.LogError($"Level with ID {id} does not exist in the database.");
+            return null;
+        }
+    }
     [Serializable]
     public class LevelData
     {

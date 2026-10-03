@@ -138,7 +138,7 @@ MonoBehaviour:
       id: 0
       scene: TutorialScene
       levelName: 0
-      isUnlock: 1
+      isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
