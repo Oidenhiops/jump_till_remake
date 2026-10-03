@@ -17,18 +17,29 @@ public class WinManager : MonoBehaviour, GameManagerHelper.IMenuScene
     }
     async Awaitable InitMenu()
     {
-        levelName.text = GameData.Instance.levelsDBSO.data[GameManager.Instance.currentLevelId].levelName;
+        levelName.text = "Level " + GameData.Instance.levelsDBSO.data[GameManager.Instance.currentLevelId].levelName;
         gameManagerHelper.sceneData = this;
         await Awaitable.NextFrameAsync();
         await circleWipe.Play(1);
-        InitStars();
+        await InitStars();
     }
-    void InitStars()
+    async Awaitable InitStars()
     {
-        bool[] starsInfo = GameData.Instance.levelsDBSO.data[GameManager.Instance.currentLevelId].GetStarsStatus();
+        bool[] starsInfo = GameData.Instance.gameDataInfo.levels[GameManager.Instance.currentLevelId].GetStarsStatus();
         for (int i = 0; i < starsInfo.Length; i++)
         {
-            stars[i].fillAmount = 1;
+            if (starsInfo[i]) await HandleStarsAnimation(stars[i]);
+        }
+    }
+    async Awaitable HandleStarsAnimation(Image starImage)
+    {
+        float elapsedTime = 0f;
+        float duration = 0.5f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            starImage.fillAmount = Mathf.Clamp01(elapsedTime / duration);
+            await Awaitable.NextFrameAsync();
         }
     }
     public void UnloadLevelSelectorMenu(InputAction.CallbackContext context) { HandleUnloadLevelSelectorMenu(); }

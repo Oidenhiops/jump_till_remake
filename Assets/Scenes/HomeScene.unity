@@ -877,7 +877,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
     m_Priority: 0
-  currentLevel: 0
+  currentLevelId: 0
 --- !u!114 &391458498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2929,10 +2929,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.08675214
+    x: 0.08974359
     y: 0
-    width: 0.35783476
-    height: 0.4361111
+    width: 0.82051283
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

@@ -40,7 +40,7 @@ public class LevelsManager : MonoBehaviour, GameManagerHelper.IMenuScene
                 if (levelIndex >= totalLevels) break;
 
                 LevelBanner levelBanner = Instantiate(GameData.Instance.utils.prefabs["LevelBanner"], levelContainer).GetComponent<LevelBanner>();
-                levelBanner.InitializeBanner(GameData.Instance.levelsDBSO.data[levelIndex]);
+                levelBanner.InitializeBanner(GameData.Instance.gameDataInfo.levels.ContainsKey(levelIndex) ? GameData.Instance.gameDataInfo.levels[levelIndex] : GameData.Instance.levelsDBSO.data[levelIndex]);
             }
         }
     }

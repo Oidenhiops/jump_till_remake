@@ -18,7 +18,7 @@ MonoBehaviour:
       id: 1
       scene: 
       levelName: 1
-      isUnlock: 1
+      isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
@@ -30,7 +30,7 @@ MonoBehaviour:
       id: 2
       scene: 
       levelName: 2
-      isUnlock: 1
+      isUnlock: 0
       isPass: 0
       time: 0
       starsTime:

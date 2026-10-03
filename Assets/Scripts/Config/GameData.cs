@@ -116,7 +116,7 @@ public class GameData : MonoBehaviour
         systemDataInfo.configurationsInfo.currentLanguage = TypeLanguage.English;
         SetStartingDataSound();
         gameDataInfo = new GameDataInfo();
-        gameDataInfo.levels.Add(levelsDBSO.data[0]);
+        gameDataInfo.levels.Add(0, levelsDBSO.data[0]);
         SaveGameData();
         _ = GameManager.Instance.LoadMenuScene(GameManager.TypeScene.LanguageSelectorScene);
     }
@@ -183,7 +183,8 @@ public class GameData : MonoBehaviour
     [Serializable]
     public class GameDataInfo
     {
-        public List<LevelsDBSO.LevelData> levels = new List<LevelsDBSO.LevelData>();
+        [SerializeField]
+        public Dictionary<int, LevelsDBSO.LevelData> levels = new Dictionary<int, LevelsDBSO.LevelData>();
     }
     [Serializable]
     public class ConfigurationsInfo
