@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CreditsScene.unity
     guid: bde08e37f1a78884c8a4705d9bae48a5
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
     path: Assets/Scenes/LevelSelectorScene.unity
     guid: d7ef6596956ffb145a00b6fc6e57b0ae
   - enabled: 1
@@ -26,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelS/TutorialScene.unity
     guid: 63a70aff68369ee4492987f7d96aa087
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 10efbff74a792ac43b6024d7f2d70ead
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

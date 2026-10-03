@@ -22,6 +22,10 @@ public class GameManagerHelper : MonoBehaviour
     {
         _ = GameManager.Instance.ReloadGameScene();
     }
+    public void LoadNextGameScene()
+    {
+        _ = GameManager.Instance.LoadNextGameScene();
+    }
     public interface IMenuScene
     {
         public void PlayEndAnimation();

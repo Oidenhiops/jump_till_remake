@@ -52,6 +52,14 @@ public class CharacterPlayer : CharacterBase
         playerInputs.Player.ScreenPress.started += OnHandleTouchScreen;
         playerInputs.Player.ScreenPress.canceled += OnHandleTouchScreen;
     }
+    void OnDisable()
+    {
+        playerInputs.Player.TouchPosition.Disable();
+        playerInputs.Player.ScreenPress.Disable();
+        playerInputs.Player.ScreenPress.started -= OnHandleTouchScreen;
+        playerInputs.Player.ScreenPress.canceled -= OnHandleTouchScreen;
+        playerInputs.Player.Disable();
+    }
     void Update()
     {
         if (isSctive)

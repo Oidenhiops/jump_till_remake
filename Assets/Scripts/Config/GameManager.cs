@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     public Action<bool> OnStartGame;
     public InputAction pauseButton;
     string[] _excludedScenesForPause = { "CreditsScene", "HomeScene", "OptionsScene" };
-    public int currentLevel;
+    public int currentLevelId;
     public bool startGame
     {
         get => _startGame;
@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     void OnDisable()
     {
         pauseButton.performed -= PauseHandle;
+        pauseButton.Disable();
     }
     void Start()
     {
@@ -106,6 +107,9 @@ public class GameManager : MonoBehaviour
                     case TypeScene.LanguageSelectorScene:
                         if (!SceneManager.GetSceneByName("LanguageSelectorScene").isLoaded) await SceneManager.LoadSceneAsync("LanguageSelectorScene", LoadSceneMode.Additive);
                         break;
+                    case TypeScene.WinScene:
+                        if (!SceneManager.GetSceneByName("WinScene").isLoaded) await SceneManager.LoadSceneAsync("WinScene", LoadSceneMode.Additive);
+                        break;
                     case TypeScene.Exit:
                         Application.Quit();
                         break;
@@ -125,7 +129,35 @@ public class GameManager : MonoBehaviour
             _ = AudioManager.Instance.FadeOut();
             await ManagementLoaderScene.Instance.CloseLoader();
             SceneManager.LoadScene(GameData.Instance.levelsDBSO.data[id].scene, LoadSceneMode.Single);
+            currentLevelId = id;
             AudioManager.Instance.bgmSource.clip = AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.BGM, GameData.Instance.levelsDBSO.data[id].scene);
+            AudioManager.Instance.bgmSource.Play();
+            _ = AudioManager.Instance.FadeIn();
+            await ManagementLoaderScene.Instance.OpenLoader();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
+    }
+
+    public async Awaitable LoadNextGameScene()
+    {
+        try
+        {
+            startGame = false;
+            _ = AudioManager.Instance.FadeOut();
+            await ManagementLoaderScene.Instance.CloseLoader();
+            if (GameData.Instance.levelsDBSO.data.ContainsKey(currentLevelId + 1))
+            {
+                currentLevelId++;
+            }
+            else
+            {
+                currentLevelId = 0;
+            }
+            SceneManager.LoadScene(GameData.Instance.levelsDBSO.data[currentLevelId].scene, LoadSceneMode.Single);
+            AudioManager.Instance.bgmSource.clip = AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.BGM, GameData.Instance.levelsDBSO.data[currentLevelId].scene);
             AudioManager.Instance.bgmSource.Play();
             _ = AudioManager.Instance.FadeIn();
             await ManagementLoaderScene.Instance.OpenLoader();
