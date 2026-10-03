@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
     public float timer;
-    public PlayerInputs playerInputs;
+    PlayerInputs playerInputs;
     public bool startTimer;
     public bool finishGame;
     public TMP_Text timerText;
