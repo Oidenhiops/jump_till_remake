@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
     }
     private void OnHandleEndChangeScene(bool value)
     {
-        CharacterPlayer.Instance.InitializeCharacter();
+        if (value) CharacterPlayer.Instance.InitializeCharacter();
     }
 
     void OnHandleTouch(InputAction.CallbackContext context)

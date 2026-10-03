@@ -52,13 +52,20 @@ public class CharacterPlayer : CharacterBase
         playerInputs.Player.ScreenPress.started += OnHandleTouchScreen;
         playerInputs.Player.ScreenPress.canceled += OnHandleTouchScreen;
     }
+    void OnEnable()
+    {
+        if (playerInputs != null) playerInputs.Player.Enable();
+    }
     void OnDisable()
     {
-        playerInputs.Player.TouchPosition.Disable();
-        playerInputs.Player.ScreenPress.Disable();
+        playerInputs.Player.Disable();
+    }
+    void OnDestroy()
+    {
         playerInputs.Player.ScreenPress.started -= OnHandleTouchScreen;
         playerInputs.Player.ScreenPress.canceled -= OnHandleTouchScreen;
-        playerInputs.Player.Disable();
+        playerInputs.Dispose();
+        if (Instance == this) Instance = null;
     }
     void Update()
     {

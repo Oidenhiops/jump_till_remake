@@ -172,6 +172,7 @@ public class GameManager : MonoBehaviour
     {
         try
         {
+            startGame = false;
             _ = AudioManager.Instance.FadeOut();
             await ManagementLoaderScene.Instance.CloseLoader();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
