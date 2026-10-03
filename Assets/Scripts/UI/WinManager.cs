@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class WinManager : MonoBehaviour, GameManagerHelper.IMenuScene
 {
@@ -9,6 +10,7 @@ public class WinManager : MonoBehaviour, GameManagerHelper.IMenuScene
     public CircleWipe circleWipe;
     bool finishEndAnimation;
     public TMP_Text levelName;
+    public Image[] stars;
     void Awake()
     {
         _ = InitMenu();
@@ -19,6 +21,15 @@ public class WinManager : MonoBehaviour, GameManagerHelper.IMenuScene
         gameManagerHelper.sceneData = this;
         await Awaitable.NextFrameAsync();
         await circleWipe.Play(1);
+        InitStars();
+    }
+    void InitStars()
+    {
+        bool[] starsInfo = GameData.Instance.levelsDBSO.data[GameManager.Instance.currentLevelId].GetStarsStatus();
+        for (int i = 0; i < starsInfo.Length; i++)
+        {
+            stars[i].fillAmount = 1;
+        }
     }
     public void UnloadLevelSelectorMenu(InputAction.CallbackContext context) { HandleUnloadLevelSelectorMenu(); }
     public void HandleUnloadLevelSelectorMenu() { gameManagerHelper.UnloadMenuScene(9); }
