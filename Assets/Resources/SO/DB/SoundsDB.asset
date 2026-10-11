@@ -39,6 +39,24 @@ MonoBehaviour:
       - {fileID: 8300000, guid: 3c3ad5fea782d6745bb174be9e20ae50, type: 3}
       - {fileID: 8300000, guid: 82f4cba4b4c4cce4c9ab53e977e8303c, type: 3}
       - {fileID: 8300000, guid: cebcb279b62453d4e90973cfdc8982ce, type: 3}
+    - key: Gear
+      value:
+      - {fileID: 8300000, guid: f0eed9b8766bb8244bdd87c38688ad65, type: 3}
+    - key: PlayerJump
+      value:
+      - {fileID: 8300000, guid: 36ce8ceb75aafbe4590331eb3b91d26b, type: 3}
+    - key: GroundSound
+      value:
+      - {fileID: 8300000, guid: 7fb158e2bf6595a47b7d7bc765300480, type: 3}
+    - key: StarSound
+      value:
+      - {fileID: 8300000, guid: 566e43caeb2e0e64c97c98f36caa9661, type: 3}
+    - key: SlimeGroundSound
+      value:
+      - {fileID: 8300000, guid: 5442fd3dbb7fc574280c8919f0df758f, type: 3}
+    - key: EnterPortal
+      value:
+      - {fileID: 8300000, guid: 3620ed8aee3ad8140acdb4585507841d, type: 3}
   - key: 1
     value:
     - key: HomeScene

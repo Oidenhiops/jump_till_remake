@@ -18,7 +18,7 @@ public class CharacterPlayer : CharacterBase
         {
             if (!_isGrounded && value)
             {
-                jumpCount = 1;
+                jumpCount = 1;                
             }
             _isGrounded = value;
         }
@@ -27,6 +27,7 @@ public class CharacterPlayer : CharacterBase
     public int jumpCount;
     public float jumpForce;
     public float speed;
+    public float currentSpeed;
     public Vector2 boxSize;
     public Vector2 boxOffset;
     public Vector2 boxOffsetGrounded;
@@ -34,6 +35,66 @@ public class CharacterPlayer : CharacterBase
     public float distance;
     public bool obtainedGear;
     public Action OnPlayerDie;
+    MapBase _collisionDown;
+    MapBase collisionDown
+    {
+        get => _collisionDown;
+        set
+        {
+            if (_collisionDown != value)
+            {
+                if (value == null && _collisionDown != null || value != null && value != _collisionDown)
+                {
+                    _collisionDown?.OnHandlePlayerExit(this, MapBase.TypeDirection.Down);
+                }
+                if (value != null)
+                {
+                    value.OnHandlePlayerEnter(this, MapBase.TypeDirection.Down);
+                }
+                _collisionDown = value;
+            }
+        }
+    }
+    MapBase _collisionLeft;
+    MapBase collisionLeft
+    {
+        get => _collisionLeft;
+        set
+        {
+            if (_collisionLeft != value)
+            {
+                if (value == null && _collisionLeft != null || value != null && value != _collisionLeft)
+                {
+                    _collisionLeft?.OnHandlePlayerExit(this, MapBase.TypeDirection.Left);
+                }
+                if (value != null)
+                {
+                    value.OnHandlePlayerEnter(this, MapBase.TypeDirection.Left);
+                }
+                _collisionLeft = value;
+            }
+        }
+    }
+    MapBase _collisionRight;
+    MapBase collisionRight
+    {
+        get => _collisionRight;
+        set
+        {
+            if (_collisionRight != value)
+            {
+                if (value == null && _collisionRight != null || value != null && value != _collisionRight)
+                {
+                    _collisionRight?.OnHandlePlayerExit(this, MapBase.TypeDirection.Right);
+                }
+                if (value != null)
+                {
+                    value.OnHandlePlayerEnter(this, MapBase.TypeDirection.Right);
+                }
+                _collisionRight = value;
+            }
+        }
+    }
     public void Awake()
     {
         Instance = this;
@@ -67,19 +128,32 @@ public class CharacterPlayer : CharacterBase
         playerInputs.Dispose();
         if (Instance == this) Instance = null;
     }
+    bool CanMakeActions()
+    {
+        return GameManager.Instance.startGame && !LevelManager.Instance.finishGame && isSctive;
+    }
     void Update()
     {
         if (isSctive)
         {
             print(Time.timeScale);
-            rb.linearVelocity = new Vector2(movementDirection.x * speed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(movementDirection.x * currentSpeed, rb.linearVelocity.y);
             ValidateGroundType();
+        }
+    }
+    void FixedUpdate()
+    {
+        if (isSctive)
+        {
+            animator.SetBool("IsMoving", rb.linearVelocityX != 0);
+            animator.SetBool("IsGrounded", isGrounded);
         }
     }
     public override void HandleStart()
     {
         isSctive = true;
         movementDirection = Vector2.right;
+        currentSpeed = speed;
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
@@ -87,6 +161,7 @@ public class CharacterPlayer : CharacterBase
     public override void HandleDie()
     {
         base.HandleDie();
+        currentSpeed = 0;
         firstTouch = false;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -94,27 +169,15 @@ public class CharacterPlayer : CharacterBase
     }
     public void ValidateGroundType()
     {
-        CheckCollisionGrounded(out RaycastHit2D collisionGrounded);
-        CheckCollisionLeft(out RaycastHit2D collisionLeft);
-        CheckCollisionRight(out RaycastHit2D collisionRight);
-        isGrounded = !!collisionGrounded;
-        if (!!collisionGrounded)
-        {
-            collisionGrounded.collider.GetComponent<MapBase>().OnHandlePlayerEnter(this, MapBase.TypeDirection.Down);
-        }
-        if (!!collisionLeft)
-        {
-            collisionLeft.collider.GetComponent<MapBase>().OnHandlePlayerEnter(this, MapBase.TypeDirection.Left);
-        }
-        if (!!collisionRight)
-        {
-            collisionRight.collider.GetComponent<MapBase>().OnHandlePlayerEnter(this, MapBase.TypeDirection.Right);
-        }
+        collisionDown = CheckCollisionGrounded();
+        collisionLeft = CheckCollisionLeft();
+        collisionRight = CheckCollisionRight();
+        isGrounded = !!collisionDown;
     }
-    public void CheckCollisionGrounded(out RaycastHit2D collisionGrounded)
+    public MapBase CheckCollisionGrounded()
     {
         RaycastHit2D hitGround = Physics2D.BoxCast(transform.position + (Vector3)boxOffsetGrounded, boxSizeGrounded, 0f, Vector2.down, distance, LayerMask.GetMask("Ground"));
-        collisionGrounded = hitGround;
+        return hitGround.collider?.GetComponent<MapBase>();
     }
     void OnHandleTouchScreen(InputAction.CallbackContext context)
     {
@@ -141,20 +204,21 @@ public class CharacterPlayer : CharacterBase
             }
         }
     }
-    public void CheckCollisionLeft(out RaycastHit2D collisionLeft)
+    public MapBase CheckCollisionLeft()
     {
         RaycastHit2D hitLeft = Physics2D.BoxCast(transform.position + (Vector3)boxOffset, boxSize, 0f, Vector2.left, distance, LayerMask.GetMask("Ground"));
-        collisionLeft = hitLeft;
+        return hitLeft.collider?.GetComponent<MapBase>();
     }
-    public void CheckCollisionRight(out RaycastHit2D collisionRight)
+    public MapBase CheckCollisionRight()
     {
         RaycastHit2D hitRight = Physics2D.BoxCast(transform.position + (Vector3)boxOffset, boxSize, 0f, Vector2.right, distance, LayerMask.GetMask("Ground"));
-        collisionRight = hitRight;
+        return hitRight.collider?.GetComponent<MapBase>();
     }
     void JumpToPosition()
     {
         jumpCount--;
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        AudioManager.Instance.PlayASound(AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.SFX, "PlayerJump"));
     }
     void OnDrawGizmos()
     {
@@ -174,9 +238,7 @@ public class CharacterPlayer : CharacterBase
     {
         if (collision.CompareTag("Gear") && !obtainedGear)
         {
-            obtainedGear = true;
-            Gear.Instance.gearSprite.SetActive(false);
-            Gear.Instance.OnHandleObtainGear?.Invoke();
+            Gear.Instance.OnPlayerEnter();
         }
         else if (collision.CompareTag("Portal") && obtainedGear)
         {

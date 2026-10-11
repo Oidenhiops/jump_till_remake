@@ -18,6 +18,7 @@ public class GroundMap : MapBase
                 characterBase.sprite.flipX = true;
                 break;
         }
-
+        AudioManager.Instance.PlayASound(AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.SFX, "GroundSound"));
     }
+    public override void OnHandlePlayerExit(CharacterBase characterBase, TypeDirection typeDirection) { }
 }

@@ -148,8 +148,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""23de723a-5827-4683-97b7-18c12635474d"",
-                    ""path"": ""<Touchscreen>/primaryTouch/press"",
+                    ""id"": ""2cfeb6c4-7c31-42e3-8d48-2a2e043c1461"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

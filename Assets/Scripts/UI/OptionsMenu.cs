@@ -30,6 +30,7 @@ public class OptionsMenu : MonoBehaviour, GameManagerHelper.IMenuScene
         try
         {
             Instance = this;
+            GameManager.Instance.isPause = true;
             InitializeVolumeMenu();
             InitializeDisplayMenu();
             gameManagerHelper.sceneData = this;

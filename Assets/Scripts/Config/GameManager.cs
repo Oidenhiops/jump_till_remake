@@ -9,9 +9,21 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public bool isPause;
     public bool isWebGlBuild;
     public bool lockDevice = false;
+    public bool _isPause;
+    public bool isPause
+    {
+        get => _isPause;
+        set
+        {
+            if (_isPause != value)
+            {
+                _isPause = value;
+                Time.timeScale = _isPause ? 0 : 1;
+            }
+        }
+    }
     public TypeDevice principalDevice;
     public TypeDevice _currentDevice;
     public event Action<TypeDevice, TypeDevice> OnDeviceChanged;
@@ -197,7 +209,6 @@ public class GameManager : MonoBehaviour
             }
             if (typeScene == TypeScene.OptionsScene)
             {
-                Time.timeScale = 1;
                 isPause = false;
             }
             else if (typeScene == TypeScene.DialogScene)

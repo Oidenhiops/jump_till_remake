@@ -55,8 +55,7 @@ public class LevelManager : MonoBehaviour
     public void OnHandlePlayerDied()
     {
         CharacterPlayer.Instance.obtainedGear = false;
-        Gear.Instance.OnHandleLoseGear?.Invoke();
-        Gear.Instance.gearSprite.SetActive(true);
+        Gear.Instance.gearSprite.enabled = true;
         CharacterPlayer.Instance.transform.position = portalPosition.position;
     }
     public void OnHandleLevelFinished()
@@ -80,6 +79,7 @@ public class LevelManager : MonoBehaviour
     }
     IEnumerator EnterPortal()
     {
+        AudioManager.Instance.PlayASound(AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.SFX, "EnterPortal"));
         float elapsedTime = 0f;
         float duration = 1f;
         while (elapsedTime < duration)

@@ -33,6 +33,7 @@ public class WinManager : MonoBehaviour, GameManagerHelper.IMenuScene
     }
     async Awaitable HandleStarsAnimation(Image starImage)
     {
+        AudioManager.Instance.PlayASound(AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.SFX, "StarSound"));
         float elapsedTime = 0f;
         float duration = 0.5f;
         while (elapsedTime < duration)
