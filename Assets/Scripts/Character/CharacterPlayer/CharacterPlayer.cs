@@ -217,6 +217,7 @@ public class CharacterPlayer : CharacterBase
     void JumpToPosition()
     {
         jumpCount--;
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         AudioManager.Instance.PlayASound(AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.SFX, "PlayerJump"));
     }
