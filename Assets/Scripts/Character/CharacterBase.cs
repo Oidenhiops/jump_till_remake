@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterBase : MonoBehaviour
 {
-    public bool isSctive;
+    public bool isActive;
     public Action OnCharacterDie;
     public SpriteRenderer sprite;
     public Vector2 movementDirection;
@@ -13,10 +13,10 @@ public class CharacterBase : MonoBehaviour
     }
     public virtual void HandleStart()
     {
-        isSctive = true;
+        isActive = true;
     }
     public virtual void HandleDie()
     {
-        isSctive = false;
+        isActive = false;
     }
 }

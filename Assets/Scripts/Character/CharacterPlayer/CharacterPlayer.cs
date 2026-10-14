@@ -112,6 +112,7 @@ public class CharacterPlayer : CharacterBase
         playerInputs.Player.ScreenPress.Enable();
         playerInputs.Player.ScreenPress.started += OnHandleTouchScreen;
         playerInputs.Player.ScreenPress.canceled += OnHandleTouchScreen;
+        isActive = true;
     }
     void OnEnable()
     {
@@ -130,11 +131,11 @@ public class CharacterPlayer : CharacterBase
     }
     bool CanMakeActions()
     {
-        return GameManager.Instance.startGame && !LevelManager.Instance.finishGame && isSctive;
+        return GameManager.Instance.startGame && !LevelManager.Instance.finishGame && isActive;
     }
     void Update()
     {
-        if (isSctive)
+        if (isActive)
         {
             print(Time.timeScale);
             rb.linearVelocity = new Vector2(movementDirection.x * currentSpeed, rb.linearVelocity.y);
@@ -143,7 +144,7 @@ public class CharacterPlayer : CharacterBase
     }
     void FixedUpdate()
     {
-        if (isSctive)
+        if (isActive)
         {
             animator.SetBool("IsMoving", rb.linearVelocityX != 0);
             animator.SetBool("IsGrounded", isGrounded);
@@ -151,7 +152,7 @@ public class CharacterPlayer : CharacterBase
     }
     public override void HandleStart()
     {
-        isSctive = true;
+        isActive = true;
         movementDirection = Vector2.right;
         currentSpeed = speed;
         rb.constraints = RigidbodyConstraints2D.None;
@@ -181,11 +182,11 @@ public class CharacterPlayer : CharacterBase
     }
     void OnHandleTouchScreen(InputAction.CallbackContext context)
     {
-        if (GameManager.Instance.startGame && !LevelManager.Instance.finishGame)
+        if (CanMakeActions())
         {
             if (context.started)
             {
-                if (!isSctive)
+                if (!firstTouch)
                 {
                     HandleStart();
                     return;
