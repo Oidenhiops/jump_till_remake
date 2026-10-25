@@ -1,5 +1,4 @@
 using System;
-using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +7,6 @@ public class CharacterPlayer : CharacterBase
     public static CharacterPlayer Instance { get; private set; }
     PlayerInputs playerInputs;
     public Rigidbody2D rb;
-    public int direction = 1;
     public Animator animator;
     public bool _isGrounded = false;
     public bool isGrounded
@@ -18,7 +16,7 @@ public class CharacterPlayer : CharacterBase
         {
             if (!_isGrounded && value)
             {
-                jumpCount = 1;                
+                jumpCount = 1;
             }
             _isGrounded = value;
         }
@@ -29,12 +27,28 @@ public class CharacterPlayer : CharacterBase
     public float speed;
     public float currentSpeed;
     public Vector2 boxSize;
-    public Vector2 boxOffset;
-    public Vector2 boxOffsetGrounded;
-    public Vector2 boxSizeGrounded;
     public float distance;
     public bool obtainedGear;
-    public Action OnPlayerDie;
+    MapBase _collisionUp;
+    MapBase collisionUp
+    {
+        get => _collisionUp;
+        set
+        {
+            if (_collisionUp != value)
+            {
+                if (value == null && _collisionUp != null || value != null && value != _collisionUp)
+                {
+                    _collisionUp?.OnHandlePlayerExit(this, MapBase.TypeDirection.Up);
+                }
+                if (value != null)
+                {
+                    value.OnHandlePlayerEnter(this, MapBase.TypeDirection.Up);
+                }
+                _collisionUp = value;
+            }
+        }
+    }
     MapBase _collisionDown;
     MapBase collisionDown
     {
@@ -137,7 +151,6 @@ public class CharacterPlayer : CharacterBase
     {
         if (isActive)
         {
-            print(Time.timeScale);
             rb.linearVelocity = new Vector2(movementDirection.x * currentSpeed, rb.linearVelocity.y);
             ValidateGroundType();
         }
@@ -159,26 +172,40 @@ public class CharacterPlayer : CharacterBase
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
     }
+    [NaughtyAttributes.Button]
+    public void Die()
+    {
+        HandleDie();
+    }
     public override void HandleDie()
     {
-        base.HandleDie();
         currentSpeed = 0;
+        isGravityChange = false;
         firstTouch = false;
+        sprite.flipX = false;
+        transform.position = spawnPos.position;
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        rb.linearVelocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        obtainedGear = false;
+        Gear.Instance.gearSprite.enabled = true;
+        OnCharacterDie?.Invoke();
     }
     public void ValidateGroundType()
     {
-        collisionDown = CheckCollisionGrounded();
         collisionLeft = CheckCollisionLeft();
         collisionRight = CheckCollisionRight();
-        isGrounded = !!collisionDown;
-    }
-    public MapBase CheckCollisionGrounded()
-    {
-        RaycastHit2D hitGround = Physics2D.BoxCast(transform.position + (Vector3)boxOffsetGrounded, boxSizeGrounded, 0f, Vector2.down, distance, LayerMask.GetMask("Ground"));
-        return hitGround.collider?.GetComponent<MapBase>();
+        if (!isGravityChange)
+        {
+            collisionDown = CheckCollisionDown();
+            isGrounded = !!collisionDown;
+        }
+        else
+        {
+            collisionUp = CheckCollisionUp();
+            isGrounded = !!collisionUp;
+        }
     }
     void OnHandleTouchScreen(InputAction.CallbackContext context)
     {
@@ -205,28 +232,38 @@ public class CharacterPlayer : CharacterBase
             }
         }
     }
+    public MapBase CheckCollisionUp()
+    {
+        RaycastHit2D hitGround = Physics2D.BoxCast(transform.position, new Vector2(boxSize.y, boxSize.x), 0f, Vector2.up, distance, LayerMask.GetMask("Ground"));
+        return hitGround.collider?.GetComponent<MapBase>();
+    }
+    public MapBase CheckCollisionDown()
+    {
+        RaycastHit2D hitGround = Physics2D.BoxCast(transform.position, new Vector2(boxSize.y, boxSize.x), 0f, Vector2.down, distance, LayerMask.GetMask("Ground"));
+        return hitGround.collider?.GetComponent<MapBase>();
+    }
     public MapBase CheckCollisionLeft()
     {
-        RaycastHit2D hitLeft = Physics2D.BoxCast(transform.position + (Vector3)boxOffset, boxSize, 0f, Vector2.left, distance, LayerMask.GetMask("Ground"));
+        RaycastHit2D hitLeft = Physics2D.BoxCast(transform.position, boxSize, 0f, Vector2.left, distance, LayerMask.GetMask("Ground"));
         return hitLeft.collider?.GetComponent<MapBase>();
     }
     public MapBase CheckCollisionRight()
     {
-        RaycastHit2D hitRight = Physics2D.BoxCast(transform.position + (Vector3)boxOffset, boxSize, 0f, Vector2.right, distance, LayerMask.GetMask("Ground"));
+        RaycastHit2D hitRight = Physics2D.BoxCast(transform.position, boxSize, 0f, Vector2.right, distance, LayerMask.GetMask("Ground"));
         return hitRight.collider?.GetComponent<MapBase>();
     }
     void JumpToPosition()
     {
         jumpCount--;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        rb.AddForce((!isGravityChange ? Vector2.up : Vector2.down) * jumpForce, ForceMode2D.Impulse);
         AudioManager.Instance.PlayASound(AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.SFX, "PlayerJump"));
     }
     void OnDrawGizmos()
     {
-        DrawBoxCastGizmo(Vector2.right, Color.green, boxSize, boxOffset);
-        DrawBoxCastGizmo(Vector2.left, Color.blue, boxSize, boxOffset);
-        DrawBoxCastGizmo(Vector2.down, Color.red, boxSizeGrounded, boxOffsetGrounded);
+        DrawBoxCastGizmo(Vector2.right, Color.green, boxSize, Vector2.zero);
+        DrawBoxCastGizmo(Vector2.left, Color.blue, boxSize, Vector2.zero);
+        DrawBoxCastGizmo(!isGravityChange ? Vector2.down : Vector2.up, Color.red, new Vector2(boxSize.y, boxSize.x), Vector2.zero);
     }
 
     void DrawBoxCastGizmo(Vector2 direction, Color color, Vector2 size, Vector2 offset)
@@ -248,8 +285,7 @@ public class CharacterPlayer : CharacterBase
         }
         else if (collision.CompareTag("Enemy"))
         {
-            LevelManager.Instance.OnHandlePlayerDied();
-            OnPlayerDie?.Invoke();
+            HandleDie();
         }
         else if (collision.CompareTag("Orb"))
         {

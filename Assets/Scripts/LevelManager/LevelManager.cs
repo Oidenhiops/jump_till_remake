@@ -52,12 +52,6 @@ public class LevelManager : MonoBehaviour
             await Awaitable.NextFrameAsync();
         }
     }
-    public void OnHandlePlayerDied()
-    {
-        CharacterPlayer.Instance.obtainedGear = false;
-        Gear.Instance.gearSprite.enabled = true;
-        CharacterPlayer.Instance.transform.position = portalPosition.position;
-    }
     public void OnHandleLevelFinished()
     {
         finishGame = true;

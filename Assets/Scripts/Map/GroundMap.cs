@@ -7,15 +7,14 @@ public class GroundMap : MapBase
     {
         switch (typeDirection)
         {
+            case TypeDirection.Up:
             case TypeDirection.Down:
                 break;
             case TypeDirection.Left:
-                characterBase.movementDirection.x = 1;
-                characterBase.sprite.flipX = false;
+                characterBase.SetMovement(1);
                 break;
             case TypeDirection.Right:
-                characterBase.movementDirection.x = -1;
-                characterBase.sprite.flipX = true;
+                characterBase.SetMovement(-1);
                 break;
         }
         AudioManager.Instance.PlayASound(AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.SFX, "GroundSound"));

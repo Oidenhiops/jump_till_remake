@@ -7,24 +7,19 @@ public class OrbBase : MonoBehaviour
     public void Start()
     {
         isActive = true;
-        CharacterPlayer.Instance.OnPlayerDie += OnHandlePlayerDie;
+        CharacterPlayer.Instance.OnCharacterDie += OnPlayerDie;
     }
     void OnDisable()
     {
-        CharacterPlayer.Instance.OnPlayerDie -= OnHandlePlayerDie;
+        CharacterPlayer.Instance.OnCharacterDie -= OnPlayerDie;
     }
     public virtual void OnPlayerEnter(CharacterPlayer characterPlayer) { Debug.LogError("On Player Enter Not Implementer"); }
-
-    void OnHandlePlayerDie()
-    {
-        OnPlayerDie();
-    }
     public virtual void AfterPlayerEnter()
     {
         orbVisual.gameObject.SetActive(false);
         isActive = false;
     }
-    public void OnPlayerDie()
+    public virtual void OnPlayerDie()
     {
         orbVisual.gameObject.SetActive(true);
         isActive = true;

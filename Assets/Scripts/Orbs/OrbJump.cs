@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class OrbJump : OrbBase
 {
     public int amountJumpsToAppend;
