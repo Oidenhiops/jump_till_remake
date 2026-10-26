@@ -25,6 +25,10 @@ public class OptionsMenu : MonoBehaviour, GameManagerHelper.IMenuScene
     {
         _ = InitMenu();
     }
+    void OnDisable()
+    {
+        GameManager.Instance.isPause = false;
+    }
     public async Awaitable InitMenu()
     {
         try
