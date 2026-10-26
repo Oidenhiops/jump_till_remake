@@ -3,5 +3,6 @@
   <Project Path="NaughtyAttributes.Editor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="NaughtyAttributes.Test.csproj" />
+  <Project Path="GoogleMobileAds.Editor.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
 </Solution>

@@ -770,7 +770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &484512034
 Animator:
   serializedVersion: 7
@@ -3986,10 +3986,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.08974359
+    x: 0.1482906
     y: 0
-    width: 0.82051283
-    height: 1
+    width: 0.26818612
+    height: 0.32685184
   near clip plane: -1
   far clip plane: 1000
   field of view: 60
@@ -4900,6 +4900,7 @@ GameObject:
   - component: {fileID: 1514533109}
   - component: {fileID: 1514533108}
   - component: {fileID: 1514533107}
+  - component: {fileID: 1514533112}
   - component: {fileID: 1514533106}
   m_Layer: 0
   m_Name: Data
@@ -5134,6 +5135,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1514533112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514533105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c153b5f0878443f43b19b4e1b44ed4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdsManager
+  useTestIds: 1
+  androidBannerId: ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy
+  androidRewardedId: ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy
+  iosBannerId: ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy
+  iosRewardedId: ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy
+  showBannerOnInit: 0
+  bannerPosition: 1
 --- !u!1 &1619026381
 GameObject:
   m_ObjectHideFlags: 0
