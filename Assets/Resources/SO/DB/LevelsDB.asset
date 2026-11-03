@@ -16,123 +16,123 @@ MonoBehaviour:
   - key: 1
     value:
       id: 1
-      scene: 
+      scene: Level1
       levelName: 1
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 16
+      - 26
+      - 44
   - key: 2
     value:
       id: 2
-      scene: 
+      scene: Level2
       levelName: 2
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 18
+      - 30
+      - 50
   - key: 3
     value:
       id: 3
-      scene: 
+      scene: Level3
       levelName: 3
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 11
+      - 19
+      - 33
   - key: 4
     value:
       id: 4
-      scene: 
+      scene: Level4
       levelName: 4
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 16
+      - 26
+      - 44
   - key: 5
     value:
       id: 5
-      scene: 
+      scene: Level5
       levelName: 5
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 22
+      - 30
+      - 44
   - key: 6
     value:
       id: 6
-      scene: 
+      scene: Level6
       levelName: 6
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 11
+      - 19
+      - 32
   - key: 7
     value:
       id: 7
-      scene: 
+      scene: Level7
       levelName: 7
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 16
+      - 26
+      - 44
   - key: 8
     value:
       id: 8
-      scene: 
+      scene: Level8
       levelName: 8
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 24
+      - 39
+      - 64
   - key: 9
     value:
       id: 9
-      scene: 
+      scene: Level9
       levelName: 9
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 16
+      - 26
+      - 44
   - key: 10
     value:
       id: 10
-      scene: 
+      scene: Level10
       levelName: 10
       isUnlock: 0
       isPass: 0
       time: 0
       starsTime:
-      - 0
-      - 0
-      - 0
+      - 14
+      - 24
+      - 40
   - key: 0
     value:
       id: 0

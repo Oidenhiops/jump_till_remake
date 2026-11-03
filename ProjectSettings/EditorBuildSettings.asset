@@ -21,10 +21,40 @@ EditorBuildSettings:
     path: Assets/Scenes/LanguageSelectorScene.unity
     guid: c2cd8a6c98dbc6640a0a3fe4301bf691
   - enabled: 1
-    path: Assets/Scenes/LevelS/TutorialScene.unity
-    guid: 63a70aff68369ee4492987f7d96aa087
-  - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 10efbff74a792ac43b6024d7f2d70ead
+  - enabled: 1
+    path: Assets/Scenes/Levels/TutorialScene.unity
+    guid: c7d752c8fb178fb4f9fd761e71f46b78
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.unity
+    guid: f5f684c43334dcf4ebdfd9e41ca6e2d8
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2.unity
+    guid: 4d3392e6caa8015d069f1dba3f043f3a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level3.unity
+    guid: 09b506a90f2d4b23a6538e3a8e0336fc
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level4.unity
+    guid: 1925a362716e889696482f53ecff5800
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level5.unity
+    guid: 7c5448682452dcf5d13da98d62cdf7df
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level6.unity
+    guid: 719369e1843f672eddf19a33dcbebe08
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level7.unity
+    guid: 1c409157b719c20f3583066ac081386d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level8.unity
+    guid: 777ae8ac19fabcc60ca56d0f229bfef6
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level9.unity
+    guid: 1adead99218c8e26d88cde05cd9a3e10
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level10.unity
+    guid: ee1f0490c38665b768801238cc62fc54
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
