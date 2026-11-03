@@ -57,6 +57,9 @@ MonoBehaviour:
     - key: EnterPortal
       value:
       - {fileID: 8300000, guid: 3620ed8aee3ad8140acdb4585507841d, type: 3}
+    - key: DeathSound
+      value:
+      - {fileID: 8300000, guid: 5b3bb5e1f92f01a4e839468498a1ce4b, type: 3}
   - key: 1
     value:
     - key: HomeScene

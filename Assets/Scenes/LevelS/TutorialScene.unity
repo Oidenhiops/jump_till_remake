@@ -1179,9 +1179,11 @@ MonoBehaviour:
       value: {fileID: 154114293388215822, guid: 2c0e4d7963c547a4bab39fd6ffe6836f, type: 3}
     - key: LevelBanner
       value: {fileID: 2093614072223719965, guid: 07ccc9476e97fa54e97eea8f7fc57ae1, type: 3}
+    - key: DieEffect
+      value: {fileID: 8171313762417649116, guid: 8afc567d52f7fdb42827232af9b9b45e, type: 3}
   locs: []
   levelsDBSO: {fileID: 11400000, guid: 42b9d3cb00a59ba43ad9145c97009d64, type: 2}
-  soundsDBSO: {fileID: 0}
+  soundsDBSO: {fileID: 11400000, guid: b4d9219eec461f74cabb3015a0998e9d, type: 2}
 --- !u!4 &887031141
 Transform:
   m_ObjectHideFlags: 0
@@ -2269,8 +2271,8 @@ Tilemap:
   - first: {x: -17, y: -7, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 4
+      m_TileIndex: 8
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2279,8 +2281,8 @@ Tilemap:
   - first: {x: 16, y: -7, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 5
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3625,10 +3627,10 @@ Tilemap:
     m_RefCount: 28
     m_Data: {fileID: 11400000, guid: b1eb3c250d0a0da42ba8d51b09caca22, type: 2}
   - serializedVersion: 2
-    m_RefCount: 16
+    m_RefCount: 15
     m_Data: {fileID: 11400000, guid: 0d9ffd1fccdf25e47805bc4f9163c86a, type: 2}
   - serializedVersion: 2
-    m_RefCount: 16
+    m_RefCount: 15
     m_Data: {fileID: 11400000, guid: 1f511e43cc50b174dac378e2681c54ca, type: 2}
   - serializedVersion: 2
     m_RefCount: 1
@@ -3639,6 +3641,12 @@ Tilemap:
   - serializedVersion: 2
     m_RefCount: 32
     m_Data: {fileID: 11400000, guid: ffef03ef790ccfc4dbf7cbb450dcb64f, type: 2}
+  - serializedVersion: 2
+    m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a2c3ce1dde9b4ae4b9447d42df776ee3, type: 2}
+  - serializedVersion: 2
+    m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: f9f5bcb768c044247883e91c9279df06, type: 2}
   m_TileSpriteArray:
   - serializedVersion: 2
     m_RefCount: 110
@@ -3653,14 +3661,20 @@ Tilemap:
     m_RefCount: 1
     m_Data: {fileID: 1524840030, guid: 22b07aeb3ea635842bfde3b1ed9763fb, type: 3}
   - serializedVersion: 2
-    m_RefCount: 16
+    m_RefCount: 15
     m_Data: {fileID: 659349771, guid: 22b07aeb3ea635842bfde3b1ed9763fb, type: 3}
   - serializedVersion: 2
-    m_RefCount: 16
+    m_RefCount: 15
     m_Data: {fileID: -2112372477, guid: 22b07aeb3ea635842bfde3b1ed9763fb, type: 3}
   - serializedVersion: 2
     m_RefCount: 32
     m_Data: {fileID: 74592710, guid: 22b07aeb3ea635842bfde3b1ed9763fb, type: 3}
+  - serializedVersion: 2
+    m_RefCount: 1
+    m_Data: {fileID: -171788923, guid: 22b07aeb3ea635842bfde3b1ed9763fb, type: 3}
+  - serializedVersion: 2
+    m_RefCount: 1
+    m_Data: {fileID: 857380527, guid: 22b07aeb3ea635842bfde3b1ed9763fb, type: 3}
   m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 204
@@ -3762,13 +3776,21 @@ CompositeCollider2D:
         Y: -80000000
       - X: -20000000
         Y: -70000000
-      - X: -160312496
+      - X: -160000000
         Y: -70000000
+      - X: -160000000
+        Y: -60000000
+      - X: -160312496
+        Y: -60000000
       - X: -160312496
         Y: 90000000
       - X: 160312496
         Y: 90000000
       - X: 160312496
+        Y: -60000000
+      - X: 160000000
+        Y: -65312500
+      - X: 160000000
         Y: -70000000
       - X: 20000000
         Y: -70000000
@@ -3783,10 +3805,14 @@ CompositeCollider2D:
     - - {x: 2, y: -7.9999704}
       - {x: -2, y: -7.9999704}
       - {x: -2.0000293, y: -7}
-      - {x: -16.03125, y: -6.9999704}
+      - {x: -16, y: -6.9999704}
+      - {x: -16.000029, y: -6}
+      - {x: -16.03125, y: -5.9999704}
       - {x: -16.031221, y: 9}
       - {x: 16.03125, y: 8.99997}
-      - {x: 16.031221, y: -7}
+      - {x: 16.03125, y: -6.000002}
+      - {x: 16, y: -6.531248}
+      - {x: 15.999971, y: -7}
       - {x: 2, y: -7.0000296}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
@@ -4131,10 +4157,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.08974359
+    x: 0.1482906
     y: 0
-    width: 0.82051283
-    height: 1
+    width: 0.26818612
+    height: 0.32685184
   near clip plane: -1
   far clip plane: 1000
   field of view: 60
@@ -5666,7 +5692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1753911480
 MonoBehaviour:
   m_ObjectHideFlags: 0
