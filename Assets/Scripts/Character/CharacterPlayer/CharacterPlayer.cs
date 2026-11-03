@@ -115,7 +115,6 @@ public class CharacterPlayer : CharacterBase
     }
     public override void InitializeCharacter()
     {
-        base.InitializeCharacter();
         movementDirection = Vector2.right;
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -171,11 +170,6 @@ public class CharacterPlayer : CharacterBase
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
-    }
-    [NaughtyAttributes.Button]
-    public void Die()
-    {
-        HandleDie();
     }
     public override void HandleDie()
     {

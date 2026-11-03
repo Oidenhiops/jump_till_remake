@@ -8,6 +8,7 @@ TagManager:
   - Portal
   - Gear
   - Orb
+  - Enemy
   layers:
   - Default
   - TransparentFX
