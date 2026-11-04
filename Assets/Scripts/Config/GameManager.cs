@@ -93,6 +93,8 @@ public class GameManager : MonoBehaviour
                 switch (typeScene)
                 {
                     case TypeScene.HomeScene:
+
+                        AdsManager.Instance.ShowBanner();
                         _ = AudioManager.Instance.FadeOut();
                         await ManagementLoaderScene.Instance.CloseLoader();
                         SceneManager.LoadScene("HomeScene", LoadSceneMode.Single);
@@ -101,26 +103,13 @@ public class GameManager : MonoBehaviour
                         _ = AudioManager.Instance.FadeIn();
                         await ManagementLoaderScene.Instance.OpenLoader();
                         break;
-                    case TypeScene.OptionsScene:
-                        if (!SceneManager.GetSceneByName("OptionsScene").isLoaded) await SceneManager.LoadSceneAsync("OptionsScene", LoadSceneMode.Additive);
-                        break;
-                    case TypeScene.CreditsScene:
-                        if (!SceneManager.GetSceneByName("CreditsScene").isLoaded) await SceneManager.LoadSceneAsync("CreditsScene", LoadSceneMode.Additive);
-                        break;
-                    case TypeScene.GameOverScene:
-                        if (!SceneManager.GetSceneByName("GameOverScene").isLoaded) await SceneManager.LoadSceneAsync("GameOverScene", LoadSceneMode.Additive);
-                        break;
-                    case TypeScene.DialogScene:
-                        if (!SceneManager.GetSceneByName("DialogScene").isLoaded) await SceneManager.LoadSceneAsync("DialogScene", LoadSceneMode.Additive);
-                        break;
                     case TypeScene.LevelSelectorScene:
-                        if (!SceneManager.GetSceneByName("LevelSelectorScene").isLoaded) await SceneManager.LoadSceneAsync("LevelSelectorScene", LoadSceneMode.Additive);
-                        break;
-                    case TypeScene.LanguageSelectorScene:
-                        if (!SceneManager.GetSceneByName("LanguageSelectorScene").isLoaded) await SceneManager.LoadSceneAsync("LanguageSelectorScene", LoadSceneMode.Additive);
-                        break;
+                    case TypeScene.CreditsScene:
                     case TypeScene.WinScene:
-                        if (!SceneManager.GetSceneByName("WinScene").isLoaded) await SceneManager.LoadSceneAsync("WinScene", LoadSceneMode.Additive);
+                    case TypeScene.OptionsScene:
+                    case TypeScene.GameOverScene:
+                    case TypeScene.LanguageSelectorScene:
+                        if (!SceneManager.GetSceneByName(typeScene.ToString()).isLoaded) await SceneManager.LoadSceneAsync(typeScene.ToString(), LoadSceneMode.Additive);
                         break;
                     case TypeScene.Exit:
                         Application.Quit();
@@ -137,6 +126,8 @@ public class GameManager : MonoBehaviour
     {
         try
         {
+            AdsManager.Instance.DestroyBanner();
+            Physics2D.gravity = new Vector2(0, -9.81f);
             startGame = false;
             _ = AudioManager.Instance.FadeOut();
             await ManagementLoaderScene.Instance.CloseLoader();
@@ -157,17 +148,20 @@ public class GameManager : MonoBehaviour
     {
         try
         {
-            startGame = false;
-            _ = AudioManager.Instance.FadeOut();
-            await ManagementLoaderScene.Instance.CloseLoader();
+            AdsManager.Instance.DestroyBanner();
             if (GameData.Instance.levelsDBSO.data.ContainsKey(currentLevelId + 1))
             {
                 currentLevelId++;
             }
             else
             {
-                currentLevelId = 0;
+                _ = LoadMenuScene(TypeScene.HomeScene);
+                return;
             }
+            Physics2D.gravity = new Vector2(0, -9.81f);
+            startGame = false;
+            _ = AudioManager.Instance.FadeOut();
+            await ManagementLoaderScene.Instance.CloseLoader();
             SceneManager.LoadScene(GameData.Instance.levelsDBSO.data[currentLevelId].scene, LoadSceneMode.Single);
             AudioManager.Instance.bgmSource.clip = AudioManager.Instance.GetAudioClip(SoundsDBSO.TypeSound.BGM, GameData.Instance.levelsDBSO.data[currentLevelId].scene);
             AudioManager.Instance.bgmSource.Play();
@@ -185,6 +179,7 @@ public class GameManager : MonoBehaviour
         try
         {
             startGame = false;
+            Physics2D.gravity = new Vector2(0, -9.81f);
             _ = AudioManager.Instance.FadeOut();
             await ManagementLoaderScene.Instance.CloseLoader();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);

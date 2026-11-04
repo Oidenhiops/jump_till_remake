@@ -68,3 +68,33 @@ MonoBehaviour:
     - key: TutorialScene
       value:
       - {fileID: 8300000, guid: c9fb7fda1cd3b04498e7f5000484cdac, type: 3}
+    - key: Level1
+      value:
+      - {fileID: 8300000, guid: 9e77bc6ee206e6a4c94b6590af9772f5, type: 3}
+    - key: Level2
+      value:
+      - {fileID: 8300000, guid: fb26ce134fdd784499ccb3c72f44c59a, type: 3}
+    - key: Level3
+      value:
+      - {fileID: 8300000, guid: c65ea28f10d327f429bfe38bae4f3500, type: 3}
+    - key: Level4
+      value:
+      - {fileID: 8300000, guid: 8f1692266caf28343bbdb339e573ad72, type: 3}
+    - key: Level5
+      value:
+      - {fileID: 8300000, guid: b1347075e1c574c418e73282e6f15436, type: 3}
+    - key: Level6
+      value:
+      - {fileID: 8300000, guid: be9d4b1447f040448bd78f1ce79f09eb, type: 3}
+    - key: Level7
+      value:
+      - {fileID: 8300000, guid: b7bfb12db7b222d4bbdf16ff92306903, type: 3}
+    - key: Level8
+      value:
+      - {fileID: 8300000, guid: 9636552ce064acb4ebb015ce92d71085, type: 3}
+    - key: Level9
+      value:
+      - {fileID: 8300000, guid: d949a47d73fa51949b6bd6d509d7b334, type: 3}
+    - key: Level10
+      value:
+      - {fileID: 8300000, guid: c9fb7fda1cd3b04498e7f5000484cdac, type: 3}

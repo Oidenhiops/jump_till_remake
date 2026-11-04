@@ -8,8 +8,8 @@ public class OrbBase : MonoBehaviour
     {
         isActive = true;
         CharacterPlayer.Instance.OnCharacterDie += OnPlayerDie;
-    }
-    void OnDisable()
+    }    
+    void OnDestroy()
     {
         CharacterPlayer.Instance.OnCharacterDie -= OnPlayerDie;
     }

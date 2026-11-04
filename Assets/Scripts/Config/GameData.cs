@@ -35,6 +35,7 @@ public class GameData : MonoBehaviour
             LoadGameDataInfo();
             LoadSystemDataInfo();
             LoadLOCS();
+            RemakeLevelsData();
             await Awaitable.NextFrameAsync();
             AudioManager.Instance.SetAudioMixerData(true);
             GameManager.Instance.StartCoroutine(AudioManager.Instance.FadeIn());
@@ -47,6 +48,13 @@ public class GameData : MonoBehaviour
     public void LoadGameDataInfo()
     {
         ReadGameDataFromJson();
+    }
+    public void RemakeLevelsData()
+    {
+        foreach (var level in gameDataInfo.levels)
+        {
+            gameDataInfo.levels[level.Key].starsTime = levelsDBSO.data[level.Key].starsTime;
+        }
     }
     public void LoadSystemDataInfo()
     {

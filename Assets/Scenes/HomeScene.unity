@@ -1732,10 +1732,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdsManager
   useTestIds: 1
-  androidBannerId: ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy
-  androidRewardedId: ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy
-  iosBannerId: ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy
-  iosRewardedId: ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy
+  androidBannerId: ca-app-pub-3940256099942544/6300978111
+  androidRewardedId: ca-app-pub-3940256099942544/5224354917
+  iosBannerId: ca-app-pub-3940256099942544/2934735716
+  iosRewardedId: ca-app-pub-3940256099942544/1712485313
   showBannerOnInit: 1
   bannerPosition: 0
 --- !u!114 &1162403705
@@ -1809,7 +1809,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameData
   gameDataInfo:
-    levels: []
+    levels:
+    - key: 0
+      value:
+        id: 0
+        scene: 
+        levelName: 
+        isUnlock: 0
+        isPass: 0
+        time: 0
+        starsTime: []
   systemDataInfo:
     currentGameDataIndex: 0
     configurationsInfo:
@@ -2951,10 +2960,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.1482906
+    x: 0.08974359
     y: 0
-    width: 0.26818612
-    height: 0.32685184
+    width: 0.82051283
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
