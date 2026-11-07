@@ -87,6 +87,11 @@ public class AdsManager : MonoBehaviour
 
     private void Start()
     {
+        // Si este es un duplicado (la escena se recargo y ya existe un AdsManager persistente),
+        // Awake ya lo marco para destruir, pero Start igual se ejecuta en este frame.
+        // Sin este guard, el duplicado inicializa AdMob otra vez y crea un banner huerfano
+        // que nadie destruye (se acumulan banners en pantalla).
+        if (Instance != this) return;
         Initialize();
     }
 
@@ -190,14 +195,31 @@ public class AdsManager : MonoBehaviour
 
         if (bannerView == null)
         {
-            // Banner adaptativo anclado: se ajusta al ancho de la pantalla.
-            AdSize adaptiveSize = AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth);
+            currentBannerPosition = position;
             AdPosition pos = position == AdPositionSimple.Top ? AdPosition.Top : AdPosition.Bottom;
 
-            bannerView = new BannerView(BannerId, adaptiveSize, pos);
-            currentBannerPosition = position;
-            RegisterBannerEvents(bannerView);
+            if (Application.isEditor)
+            {
+                // Editor: banner falso del plugin, se deja el comportamiento por defecto.
+                AdSize editorSize = AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth);
+                bannerView = new BannerView(BannerId, editorSize, pos);
+            }
+            else
+            {
+                // Dispositivo real. El plugin de Android centra el banner en TODA la pantalla y luego
+                // le aplica el inset del notch como margen, asi que con un banner de ancho completo
+                // queda corrido hacia un lado y cortado. Solucion: ancho simetrico (pantalla menos el
+                // inset mas grande a cada lado) y posicion custom (x,y en dp) desde la esquina superior.
+                ComputeBannerLayout(out int widthDp, out int xDp);
+                Debug.Log($"[AdsManager] Banner widthDp={widthDp} xDp={xDp} (screen={Screen.width}x{Screen.height}, safe={Screen.safeArea}, dpi={Screen.dpi})");
+                AdSize adaptiveSize = AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(widthDp);
 
+                // y provisional (se corrige al cargar, cuando ya se conoce la altura real del banner).
+                int yDp = position == AdPositionSimple.Top ? 0 : Mathf.Max(0, PixelsToDp(Screen.height) - 90);
+                bannerView = new BannerView(BannerId, adaptiveSize, xDp, yDp);
+            }
+
+            RegisterBannerEvents(bannerView);
             bannerView.LoadAd(new AdRequest());
         }
         else
@@ -228,9 +250,48 @@ public class AdsManager : MonoBehaviour
     }
 
 #if UNITY_ANDROID || UNITY_IOS
+    private static float Density => (Screen.dpi > 0 ? Screen.dpi : 160f) / 160f;
+
+    private static int PixelsToDp(float px) => Mathf.RoundToInt(px / Density);
+
+    /// <summary>
+    /// Calcula el ancho del banner (dp) y su offset horizontal (dp) para que quede centrado y fuera
+    /// del notch sin importar de que lado este. Usa el inset mayor a ambos lados (simetrico).
+    /// </summary>
+    private static void ComputeBannerLayout(out int widthDp, out int xDp)
+    {
+        Rect safe = Screen.safeArea;
+        float insetLeft = Mathf.Max(0f, safe.xMin);
+        float insetRight = Mathf.Max(0f, Screen.width - safe.xMax);
+        float inset = Mathf.Max(insetLeft, insetRight);
+
+        float widthPx = Screen.width - 2f * inset;
+        widthDp = Mathf.FloorToInt(widthPx / Density);
+        xDp = Mathf.CeilToInt(inset / Density);
+
+        if (widthDp < 320) { widthDp = 320; xDp = Mathf.Max(0, PixelsToDp((Screen.width - 320f * Density) / 2f)); }
+    }
+
     private void RegisterBannerEvents(BannerView banner)
     {
-        banner.OnBannerAdLoaded += () => Debug.Log("[AdsManager] Banner cargado.");
+        banner.OnBannerAdLoaded += () =>
+        {
+            Debug.Log("[AdsManager] Banner cargado.");
+            // Recalcula la posicion con el ancho real del anuncio ya cargado
+            // (evita que quede desplazado a la derecha en Android).
+            if (!Application.isEditor)
+            {
+                // Reposiciona con la altura real del anuncio ya cargado.
+                ComputeBannerLayout(out _, out int xDp);
+                int yDp = 0;
+                if (currentBannerPosition == AdPositionSimple.Bottom)
+                {
+                    float heightPx = banner.GetHeightInPixels();
+                    yDp = Mathf.Max(0, PixelsToDp(Screen.height - heightPx));
+                }
+                banner.SetPosition(xDp, yDp);
+            }
+        };
         banner.OnBannerAdLoadFailed += error => Debug.LogWarning("[AdsManager] Banner fallo al cargar: " + error);
         banner.OnAdPaid += value => Debug.Log($"[AdsManager] Banner pagado: {value.Value} {value.CurrencyCode}");
         banner.OnAdFullScreenContentOpened += () => Debug.Log("[AdsManager] Banner abrio overlay.");
