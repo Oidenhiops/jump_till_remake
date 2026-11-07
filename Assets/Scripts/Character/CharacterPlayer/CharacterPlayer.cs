@@ -170,6 +170,7 @@ public class CharacterPlayer : CharacterBase
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
+        firstTouch = true;
     }
     public override void HandleDie()
     {
@@ -178,6 +179,8 @@ public class CharacterPlayer : CharacterBase
         firstTouch = false;
         sprite.flipX = false;
         transform.position = spawnPos.position;
+        animator.SetBool("ChargeJump", false);
+        animator.Play("Idle", 0, -1f);
         transform.localRotation = Quaternion.Euler(Vector3.zero);
         rb.linearVelocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX;
@@ -207,18 +210,14 @@ public class CharacterPlayer : CharacterBase
         {
             if (context.started)
             {
-                if (!firstTouch)
-                {
-                    HandleStart();
-                    return;
-                }
+                if (!firstTouch) return;
                 animator.SetBool("ChargeJump", true);
             }
             else if (context.canceled)
             {
                 if (!firstTouch)
                 {
-                    firstTouch = true;
+                    if (isGrounded) HandleStart();
                     return;
                 }
                 animator.SetBool("ChargeJump", false);
